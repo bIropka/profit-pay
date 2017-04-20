@@ -12,8 +12,6 @@ $(window).ready(function() {
 
         }
 
-
-
     });
 
     if($(window).width() < 1201) {
