@@ -8,7 +8,7 @@
 ***********************************************************************************************************************/
 
 @text-orange: #c98729;
-@orange: #c88524;
+@orange: #c9861f;
 @yellow: #fab617;
 
 /***********************************************************************************************************************
@@ -238,6 +238,67 @@ h2 {
 
 }
 
+main {
+  border: 1px solid transparent;
+  background: #fff;
+  margin: 48px 0 0 0;
+  padding: 0 30px;
+  overflow: hidden;
+
+  h1 {
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    padding: 35px 0 15px;
+    margin: 0;
+    position: relative;
+
+    &:before {
+      .turned(20deg);
+
+      content: '';
+      display: block;
+      width: 30px;
+      height: 5px;
+      background: @orange;
+      position: absolute;
+      left: -33px;
+      bottom: -5px;
+    }
+
+    &:after {
+      .turned(20deg);
+
+      content: '';
+      display: block;
+      height: 5px;
+      background: #ececec;
+      position: absolute;
+      bottom: -5px;
+      left: 3px;
+      right: -30px;
+    }
+
+  }
+
+  img {
+    display: block;
+    margin: 0 30px 30px 0;
+    float: left;
+    width: auto;
+    max-width: 100%;
+  }
+
+  p {
+    margin: 35px 0;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 400;
+  }
+
+}
+
 /***********************************************************************************************************************
 *********** header
 ***********************************************************************************************************************/
@@ -274,6 +335,12 @@ h2 {
         display: none;
       }
 
+    }
+
+    .sign-logined {
+      display: block;
+      width: 100%;
+      text-align: center;
     }
 
     .local {
@@ -325,6 +392,7 @@ h2 {
 
 header[role='banner'] {
   background: #fff;
+  position: relative;
 
   .wrapper-inner {
     display: flex;
@@ -693,6 +761,153 @@ nav {
 
 }
 
+.sign-logined {
+  display: inline-block;
+  vertical-align: middle;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    background: transparent url(../source/images/icon-logined.png) no-repeat 0 0;
+    margin: 0 10px 0 0;
+  }
+
+  .name, .logout {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+  }
+
+  .logout {
+    color: #c88524;
+  }
+
+  .name:after {
+    content: '|';
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 2px 0 5px;
+    position: relative;
+    bottom: 2px;
+  }
+
+}
+
+.account-bar {
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #fbb70f;
+
+  .wrapper-inner {
+    padding: 0!important;
+
+    @media(max-width: 1200px) {
+      padding: 0 10px!important;
+    }
+
+  }
+
+  .account-burger {
+    display: none;
+
+    @media(max-width: 1200px) {
+      display: block;
+      height: 48px;
+      font-size: 24px;
+      line-height: 48px;
+
+      &.active {
+        color: #a4000a;
+      }
+
+    }
+
+  }
+
+  .account-money {
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    span {
+      font-size: inherit;
+    }
+
+  }
+
+  .account-nav {
+    display: block;
+    font-size: 0;
+
+    li {
+      display: inline-block;
+
+      a {
+        display: block;
+        height: 48px;
+        line-height: 48px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 0 8px;
+
+        &:hover,
+        &.active {
+          background: #000;
+          color: #fff;
+        }
+
+      }
+
+    }
+
+    @media(max-width: 1200px) {
+      .smooth(.6s);
+
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: ~'calc(100% - 45px)';
+      background: #fbb70f;
+      z-index: 1002;
+      -webkit-box-shadow: -5px 0 5px -2px rgba(0, 0, 0, .25);
+      -moz-box-shadow: -5px 0 5px -2px rgba(0, 0, 0, .25);
+      box-shadow: -5px 0 5px -2px rgba(0, 0, 0, .25);
+      overflow: auto;
+      padding: 40px 0;
+
+      &.active {
+        right: 0;
+      }
+
+      li {
+        display: block;
+        text-align: center;
+      }
+
+    }
+
+  }
+
+}
+
 /***********************************************************************************************************************
 *********** footer
 ***********************************************************************************************************************/
@@ -871,13 +1086,25 @@ footer[role='contentinfo'] {
 
 }
 
-.form-calculate-profit {
+.calculate-profit {
   margin: 0 0 110px 0;
   text-align: center;
+
+  @media(max-width: 480px) {
+    margin: 0 0 70px 0;
+  }
+
+}
+
+.form-calculate-profit {
+  display: inline-block;
+  position: relative;
+
 
   label {
     display: inline-block;
     vertical-align: middle;
+    margin: 15px 15px 15px 0;
   }
 
   input {
@@ -886,7 +1113,6 @@ footer[role='contentinfo'] {
     height: 43px;
     background: #fff;
     border: none;
-    margin: 5px;
     text-align: center;
   }
 
@@ -899,7 +1125,6 @@ footer[role='contentinfo'] {
     height: 43px;
     background: @yellow;
     border: none;
-    margin: 5px;
     font-weight: 700;
     font-size: 12px;
     text-transform: uppercase;
@@ -912,15 +1137,51 @@ footer[role='contentinfo'] {
   }
 
   @media(max-width: 480px) {
-    margin: 0 0 50px 0;
+
+    label {
+      margin: 10px;
+    }
 
     input {
       width: 200px;
-
     }
 
     button[type='submit'] {
       width: 200px;
+      margin: 10px;
+    }
+
+  }
+
+}
+
+.result-profit {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  display: block;
+  width: 100%;
+  background: rgba(0, 0, 0, .77);
+  padding: 11px 0 12px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  span {
+    font-size: inherit;
+  }
+
+  .money {
+    color: @yellow;
+  }
+
+  br {
+    display: none;
+
+    @media(max-width: 480px) {
+      display: block;
     }
 
   }
