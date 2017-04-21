@@ -412,6 +412,20 @@ main {
 
   }
 
+  h2 {
+    text-align: left;
+    font-weight: 600;
+    line-height: 28px;
+    color: #b36900;
+    font-size: 20px;
+    margin: 30px 0 0 0;
+
+    &:after {
+      display: none;
+    }
+
+  }
+
   img {
     display: block;
     margin: 0 30px 30px 0;
@@ -2080,20 +2094,6 @@ footer[role='contentinfo'] {
 main .competitions {
   padding: 0;
 
-  h2 {
-    text-align: left;
-    font-weight: 600;
-    line-height: 28px;
-    color: #b36900;
-    font-size: 20px;
-    margin: 30px 0 0 0;
-
-    &:after {
-      display: none;
-    }
-
-  }
-
   .your-rate {
     font-size: 17px;
     font-weight: 600;
@@ -2383,6 +2383,245 @@ main .competitions {
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
     z-index: 10;
+  }
+
+}
+
+/***********************************************************************************************************************
+*********** partners
+***********************************************************************************************************************/
+
+.partners {
+
+  .referral-link {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #b36900;
+    margin: 20px 0;
+
+    a {
+      font-size: inherit;
+      font-weight: inherit;
+      color: #000000;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+    }
+
+  }
+
+  p {
+    margin: 20px 0;
+  }
+
+  .banner {
+    margin: 30px 0;
+
+    a {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 0 0 30px;
+      color: #cc9850;
+      font-weight: 600;
+      position: relative;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right, #cc9850, #cc9850 5px, transparent 5px) repeat-x;
+        background-size: 10px 1px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      &:hover:after {
+        display: none;
+      }
+
+      @media(max-width: 980px) {
+        margin: 10px 0;
+      }
+
+    }
+
+  }
+
+  .banner-wide {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    max-width: 728px;
+    padding-top: 8.122743682310469%;
+    border: 1px solid #e1e1e1;
+    background-color: #fafafa;
+    position: relative;
+
+    @media(max-width: 980px) {
+      display: block;
+      max-width: none;
+      padding-top: 0;
+      height: 60px;
+    }
+
+  }
+
+  .banner-middle {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    max-width: 468px;
+    padding-top: 5.415162454873646%;
+    border: 1px solid #e1e1e1;
+    background-color: #fafafa;
+    position: relative;
+
+    @media(max-width: 980px) {
+      display: block;
+      max-width: none;
+      padding-top: 0;
+      height: 60px;
+    }
+
+  }
+
+  .banner-narrow {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    max-width: 240px;
+    padding-top: 36.10108303249097%;
+    border: 1px solid #e1e1e1;
+    background-color: #fafafa;
+    position: relative;
+
+    @media(max-width: 980px) {
+      display: block;
+      max-width: none;
+      padding-top: 0;
+      height: 60px;
+    }
+
+  }
+
+  .size {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+
+  .custom-table-caption {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #b36900;
+
+    span {
+      font-weight: inherit;
+      font-size: inherit;
+      color: #000;
+    }
+
+  }
+
+  .custom-table {
+
+    .custom-table-cell {
+
+      &:nth-of-type(1) {
+        width: 20%;
+      }
+
+      &:nth-of-type(2) {
+        width: 30%;
+      }
+
+      &:nth-of-type(2) {
+        width: 50%;
+      }
+
+    }
+
+    @media(max-width: 980px) {
+        display: block;
+        width: 100%;
+        background: none;
+
+      .custom-table-row {
+        .clearfix();
+        display: block;
+        width: 100%;
+        border: 1px solid #e1e1e1;
+        margin: 10px 0;
+        padding: 0;
+        position: relative;
+        min-height: 0;
+
+        &:first-of-type {
+          display: none;
+        }
+
+      }
+
+      .custom-table-cell {
+        height: auto;
+
+        &:after {
+          display: none;
+        }
+
+        &:nth-of-type(1) {
+          display: block;
+          width: 100%;
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 1;
+          text-align: center;
+          padding: 20px 0;
+          border: none;
+          border-bottom: 1px solid #e1e1e1;
+          float: left;
+        }
+
+        &:nth-of-type(2),
+        &:nth-of-type(3) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+          flex-wrap: wrap;
+          width: 50%;
+          min-height: 50px;
+          float: left;
+          border: none;
+          padding: 5px 10px;
+        }
+
+        &:nth-of-type(3) {
+          border-left: 1px solid #e1e1e1;
+          font-size: 18px;
+          font-style: italic;
+          font-weight: 600;
+        }
+
+      }
+
+    }
+
   }
 
 }
