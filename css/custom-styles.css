@@ -5114,3 +5114,119 @@ main .competitions .your-rate span {
     font-weight: 500;
   }
 }
+/***********************************************************************************************************************
+*********** withdraw
+***********************************************************************************************************************/
+.withdraw .custom-table-cell:nth-of-type(1) {
+  width: 10%;
+}
+.withdraw .custom-table-cell:nth-of-type(5) {
+  width: 20%;
+}
+.withdraw .custom-table-cell:nth-of-type(2),
+.withdraw .custom-table-cell:nth-of-type(3),
+.withdraw .custom-table-cell:nth-of-type(4),
+.withdraw .custom-table-cell:nth-of-type(6) {
+  width: 17.5%;
+}
+@media (max-width: 980px) {
+  .withdraw .custom-table {
+    display: block;
+    width: 100%;
+    background: none;
+  }
+  .withdraw .custom-table-row {
+    display: block;
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    margin: 10px 0;
+    padding: 0 0 0 100px;
+    position: relative;
+    min-height: 100px;
+  }
+  .withdraw .custom-table-row:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .withdraw .custom-table-row:first-of-type {
+    display: none;
+  }
+  .withdraw .custom-table-cell {
+    padding: 0;
+  }
+  .withdraw .custom-table-cell:after {
+    display: none;
+  }
+  .withdraw .custom-table-cell:nth-of-type(1) {
+    display: block;
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 72px;
+    line-height: 120px;
+    text-align: center;
+    padding: 0;
+    border: none;
+    border-right: 1px solid #e1e1e1;
+    float: left;
+  }
+  .withdraw .custom-table-cell:nth-of-type(2),
+  .withdraw .custom-table-cell:nth-of-type(3),
+  .withdraw .custom-table-cell:nth-of-type(4),
+  .withdraw .custom-table-cell:nth-of-type(5) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+    min-height: 40px;
+    float: left;
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 10px 10px;
+  }
+  .withdraw .custom-table-cell:nth-of-type(2),
+  .withdraw .custom-table-cell:nth-of-type(3) {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .withdraw .custom-table-cell:nth-of-type(4),
+  .withdraw .custom-table-cell:nth-of-type(5) {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 24px;
+  }
+  .withdraw .custom-table-cell:nth-of-type(6) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 40px;
+    float: left;
+    border: none;
+    padding: 10px 10px;
+  }
+}
+@media (max-width: 480px) {
+  .withdraw .custom-table-row {
+    padding: 0 0 0 50px;
+  }
+  .withdraw .custom-table-cell:nth-of-type(1) {
+    width: 50px;
+  }
+  .withdraw .custom-table-cell:nth-of-type(2),
+  .withdraw .custom-table-cell:nth-of-type(3) {
+    font-size: 16px;
+  }
+  .withdraw .custom-table-cell:nth-of-type(4),
+  .withdraw .custom-table-cell:nth-of-type(5) {
+    font-size: 18px;
+  }
+}
