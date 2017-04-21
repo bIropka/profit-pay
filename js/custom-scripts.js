@@ -86,4 +86,13 @@ $(window).ready(function() {
         }
     });
 
+    $('.faq-item-header').click(function() {
+
+        $(this).parent().siblings('.faq-item').find('.faq-item-header').removeClass('active');
+        $(this).parent().siblings('.faq-item').find('.faq-item-data').slideUp(200);
+        $(this).toggleClass('active');
+        $(this).siblings('.faq-item-data').slideToggle(200);
+
+    });
+
 });
