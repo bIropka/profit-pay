@@ -5230,3 +5230,130 @@ main .competitions .your-rate span {
     font-size: 18px;
   }
 }
+/***********************************************************************************************************************
+*********** support
+***********************************************************************************************************************/
+.support .to-support {
+  display: block;
+  width: 100%;
+  max-width: 312px;
+  height: 42px;
+  color: #010000;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 42px;
+  text-transform: uppercase;
+  background: #fab617;
+  border: none;
+  text-align: center;
+}
+.support .to-support:hover {
+  background: #010000;
+  color: #fab617;
+}
+.support .to-support:active {
+  line-height: 45px;
+}
+.support .custom-table-heading {
+  width: 35%;
+}
+.support .custom-table-heading:nth-of-type(1) {
+  width: 10%;
+}
+.support .custom-table-heading:nth-of-type(2) {
+  width: 20%;
+}
+.support .custom-table-cell {
+  width: 35%;
+}
+.support .custom-table-cell:nth-of-type(1) {
+  width: 10%;
+}
+.support .custom-table-cell:nth-of-type(2) {
+  width: 20%;
+}
+@media (max-width: 980px) {
+  .support .custom-table {
+    display: block;
+    width: 100%;
+    background: none;
+  }
+  .support .custom-table-row {
+    display: block;
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    margin: 10px 0;
+    padding: 0 0 0 100px;
+    position: relative;
+    min-height: 100px;
+  }
+  .support .custom-table-row:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .support .custom-table-row:first-of-type {
+    display: none;
+  }
+  .support .custom-table-cell {
+    padding: 0;
+  }
+  .support .custom-table-cell:after {
+    display: none;
+  }
+  .support .custom-table-cell:nth-of-type(1) {
+    display: block;
+    width: 100px;
+    min-height: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 72px;
+    line-height: 100px;
+    text-align: center;
+    padding: 0;
+    border: none;
+    border-right: 1px solid #e1e1e1;
+    float: left;
+  }
+  .support .custom-table-cell:nth-of-type(2),
+  .support .custom-table-cell:nth-of-type(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+    min-height: 50px;
+    float: left;
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 5px 10px;
+  }
+  .support .custom-table-cell:nth-of-type(2) {
+    border-right: 1px solid #e1e1e1;
+    font-weight: 700;
+  }
+  .support .custom-table-cell:nth-of-type(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 50px;
+    float: left;
+    border: none;
+    font-style: italic;
+    padding: 5px 10px;
+  }
+}
+@media (max-width: 480px) {
+  .support .custom-table-row {
+    padding: 0 0 0 50px;
+  }
+  .support .custom-table-cell:nth-of-type(1) {
+    width: 50px;
+  }
+}
