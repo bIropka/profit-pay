@@ -4918,7 +4918,7 @@ main .competitions .your-rate span {
 .partners .custom-table .custom-table-cell:nth-of-type(2) {
   width: 30%;
 }
-.partners .custom-table .custom-table-cell:nth-of-type(2) {
+.partners .custom-table .custom-table-cell:nth-of-type(3) {
   width: 50%;
 }
 @media (max-width: 980px) {
@@ -5035,4 +5035,82 @@ main .competitions .your-rate span {
   font-size: 16px;
   font-weight: 700;
   line-height: 26px;
+}
+/***********************************************************************************************************************
+*********** stat
+***********************************************************************************************************************/
+.stat .custom-table .custom-table-cell:nth-of-type(1) {
+  width: 20%;
+}
+.stat .custom-table .custom-table-cell:nth-of-type(2) {
+  width: 30%;
+}
+.stat .custom-table .custom-table-cell:nth-of-type(3) {
+  width: 50%;
+}
+@media (max-width: 980px) {
+  .stat .custom-table {
+    display: block;
+    width: 100%;
+    background: none;
+  }
+  .stat .custom-table .custom-table-row {
+    display: block;
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    margin: 10px 0;
+    padding: 0;
+    position: relative;
+    min-height: 0;
+  }
+  .stat .custom-table .custom-table-row:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .stat .custom-table .custom-table-row:first-of-type {
+    display: none;
+  }
+  .stat .custom-table .custom-table-cell {
+    height: auto;
+  }
+  .stat .custom-table .custom-table-cell:after {
+    display: none;
+  }
+  .stat .custom-table .custom-table-cell:nth-of-type(1) {
+    display: block;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    padding: 20px 0;
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
+    float: left;
+  }
+  .stat .custom-table .custom-table-cell:nth-of-type(2),
+  .stat .custom-table .custom-table-cell:nth-of-type(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+    min-height: 50px;
+    float: left;
+    border: none;
+    padding: 5px 10px;
+  }
+  .stat .custom-table .custom-table-cell:nth-of-type(3) {
+    border-left: 1px solid #e1e1e1;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+  }
+  .stat .custom-table.two-col .custom-table-cell:nth-of-type(2) {
+    width: 100%;
+    font-size: 22px;
+    font-weight: 500;
+  }
 }
