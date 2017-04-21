@@ -95,4 +95,28 @@ $(window).ready(function() {
 
     });
 
+    $('.window').click(function (event) {
+        $target = $(event.target);
+        if (!$target.closest($('form')).length) $('.window').fadeOut();
+        if ($target.hasClass('close-window') || $target.hasClass('fa-close')) $('.window').fadeOut();
+    });
+
+    $('.close-window .fa').click(function() {
+        $('.window').fadeOut();
+    });
+
+    $('.sign-up').click(function() {
+        $('.window-reg-1').fadeIn();
+    });
+
+    $('.window-reg-1 button').click(function() {
+        $('.window-reg-1').fadeOut();
+        $('.window-reg-2').fadeIn();
+    });
+
+    $('.sign-in').click(function() {
+        $('.window-login').fadeIn();
+    });
+
+
 });
