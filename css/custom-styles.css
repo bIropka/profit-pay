@@ -2853,6 +2853,11 @@ a:active {
   outline: none;
 }
 button {
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
   cursor: pointer;
 }
 button:focus,
@@ -2862,6 +2867,10 @@ button:active {
 p {
   line-height: 1.4;
   font-size: 14px;
+}
+fieldset {
+  display: block;
+  border: none;
 }
 input::-webkit-input-placeholder {
   color: #000;
@@ -2985,6 +2994,104 @@ h2:after {
 .custom-table .custom-table-cell:first-of-type {
   border-left: 1px solid #e1e1e1;
 }
+form {
+  display: block;
+}
+form label {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+}
+form input[type='text'] {
+  display: block;
+  width: 100%;
+  height: 42px;
+  background: #fbfafb;
+  border: 1px solid #e2e2e2;
+  padding: 0 20px;
+}
+form button[type='submit'] {
+  width: 100%;
+  height: 42px;
+  color: #010000;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 42px;
+  text-transform: uppercase;
+  background: #fab617;
+  border: none;
+}
+form button[type='submit']:hover {
+  background: #010000;
+  color: #fab617;
+}
+form button[type='submit']:active {
+  line-height: 45px;
+}
+.custom-select {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.custom-select .current-value {
+  display: block;
+  width: 100%;
+  height: 42px;
+  background: #fbfafb;
+  border: 1px solid #e2e2e2;
+  padding: 0 20px;
+  line-height: 40px;
+  position: relative;
+  cursor: pointer;
+}
+.custom-select .current-value:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 7px solid #b46900;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.custom-select ul {
+  display: none;
+  width: 100%;
+  background: #fbfafb;
+  border: 1px solid #e2e2e2;
+  border-top: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 10;
+  padding: 10px 0;
+}
+.custom-select ul li {
+  display: block;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+.custom-select ul li:hover {
+  color: #c98729;
+}
+.custom-select label,
+.custom-select input {
+  display: none;
+}
+.custom-select.active .current-value:after {
+  border-top: none;
+  border-bottom: 7px solid #b46900;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+.custom-select.active ul {
+  display: block;
+}
 main {
   border: 1px solid transparent;
   background: #fff;
@@ -3043,6 +3150,14 @@ main p {
   font-size: 14px;
   line-height: 25px;
   font-weight: 400;
+}
+main .custom-table {
+  margin: 20px 0 30px;
+}
+@media (max-width: 480px) {
+  main {
+    padding: 0 15px;
+  }
 }
 /***********************************************************************************************************************
 *********** header
@@ -3717,6 +3832,7 @@ footer[role='contentinfo'] .we-accept span {
 .form-calculate-profit label {
   display: inline-block;
   vertical-align: middle;
+  width: auto;
   margin: 15px 15px 15px 0;
 }
 .form-calculate-profit input {
@@ -4437,12 +4553,158 @@ main .competitions h2:after {
 }
 main .competitions .your-rate {
   font-size: 17px;
-  margin: 0 0 20px 0;
   font-weight: 600;
 }
 main .competitions .your-rate span {
   font-size: inherit;
 }
 /***********************************************************************************************************************
-*********** competitions
+*********** deposit
 ***********************************************************************************************************************/
+.deposit .custom-table {
+  margin: 10px 0 30px;
+}
+.deposit .custom-table-cell:nth-of-type(1) {
+  width: 10%;
+}
+.deposit .custom-table-cell:nth-of-type(2) {
+  width: 20%;
+}
+.deposit .custom-table-cell:nth-of-type(3) {
+  width: 30%;
+}
+.deposit .custom-table-cell:nth-of-type(4) {
+  width: 40%;
+}
+.deposit .custom-table-caption {
+  color: #b36900;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+@media (max-width: 980px) {
+  .deposit .custom-table {
+    display: block;
+    width: 100%;
+    background: none;
+  }
+  .deposit .custom-table-row {
+    display: block;
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    margin: 10px 0;
+    padding: 0 0 0 100px;
+    position: relative;
+    min-height: 100px;
+  }
+  .deposit .custom-table-row:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .deposit .custom-table-row:first-of-type {
+    display: none;
+  }
+  .deposit .custom-table-cell {
+    padding: 0;
+  }
+  .deposit .custom-table-cell:after {
+    display: none;
+  }
+  .deposit .custom-table-cell:nth-of-type(1) {
+    display: block;
+    width: 100px;
+    min-height: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 72px;
+    line-height: 100px;
+    text-align: center;
+    padding: 0;
+    border: none;
+    border-right: 1px solid #e1e1e1;
+    float: left;
+  }
+  .deposit .custom-table-cell:nth-of-type(2),
+  .deposit .custom-table-cell:nth-of-type(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+    min-height: 50px;
+    float: left;
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 5px 10px;
+  }
+  .deposit .custom-table-cell:nth-of-type(2) {
+    border-right: 1px solid #e1e1e1;
+    font-weight: 700;
+  }
+  .deposit .custom-table-cell:nth-of-type(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 50px;
+    float: left;
+    border: none;
+    font-style: italic;
+    padding: 5px 10px;
+    font-size: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .deposit .custom-table-row {
+    padding: 0 0 0 50px;
+  }
+  .deposit .custom-table-cell:nth-of-type(1) {
+    width: 50px;
+  }
+}
+.form-make-deposit {
+  margin: 20px 0 30px;
+}
+.form-make-deposit fieldset {
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 10px 0;
+}
+.form-make-deposit fieldset:nth-of-type(2) {
+  margin: 10px 20px;
+}
+.form-make-deposit .custom-select-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+.form-make-deposit .custom-select {
+  width: 312px;
+}
+.form-make-deposit label {
+  margin: 0 0 10px 0;
+}
+.form-make-deposit button[type='submit'] {
+  width: 178px;
+  margin: 10px 0;
+}
+@media (max-width: 768px) {
+  .form-make-deposit fieldset {
+    width: 100%;
+  }
+  .form-make-deposit fieldset:nth-of-type(2) {
+    margin: 10px 0;
+  }
+  .form-make-deposit .custom-select,
+  .form-make-deposit button[type='submit'],
+  .form-make-deposit input[type='text'] {
+    width: 100%;
+    max-width: 312px;
+  }
+}

@@ -103,6 +103,8 @@ a {
 }
 
 button {
+  .smooth(.4s);
+
   cursor: pointer;
 
   &:focus, &:active {
@@ -114,6 +116,11 @@ button {
 p {
   line-height: 1.4;
   font-size: 14px;
+}
+
+fieldset {
+  display: block;
+  border: none;
 }
 
 input::-webkit-input-placeholder {color: #000;font-size: 14px;}
@@ -238,6 +245,129 @@ h2 {
 
 }
 
+form {
+  display: block;
+
+  label {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  input[type='text'] {
+    display: block;
+    width: 100%;
+    height: 42px;
+    background: #fbfafb;
+    border: 1px solid #e2e2e2;
+    padding: 0 20px;
+  }
+
+  button[type='submit'] {
+    width: 100%;
+    height: 42px;
+    color: #010000;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 42px;
+    text-transform: uppercase;
+    background: #fab617;
+    border: none;
+
+    &:hover {
+      background: #010000;
+      color: #fab617;
+    }
+
+    &:active {
+      line-height: 45px;
+    }
+
+  }
+
+}
+
+.custom-select {
+  display: block;
+  width: 100%;
+  position: relative;
+
+  .current-value {
+    display: block;
+    width: 100%;
+    height: 42px;
+    background: #fbfafb;
+    border: 1px solid #e2e2e2;
+    padding: 0 20px;
+    line-height: 40px;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 7px solid #b46900;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      position: absolute;
+      right: 10px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+  }
+
+  ul {
+    display: none;
+    width: 100%;
+    background: #fbfafb;
+    border: 1px solid #e2e2e2;
+    border-top: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 10;
+    padding: 10px 0;
+
+    li {
+      display: block;
+      padding: 5px 20px;
+      cursor: pointer;
+
+      &:hover {
+        color: @text-orange;
+      }
+
+    }
+
+  }
+
+  label,
+  input {
+    display: none;
+  }
+
+  &.active {
+
+    .current-value:after {
+      border-top: none;
+      border-bottom: 7px solid #b46900;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+
+    ul {
+      display: block;
+    }
+
+  }
+
+}
+
 main {
   border: 1px solid transparent;
   background: #fff;
@@ -295,6 +425,14 @@ main {
     font-size: 14px;
     line-height: 25px;
     font-weight: 400;
+  }
+
+  .custom-table {
+    margin: 20px 0 30px;
+  }
+
+  @media(max-width: 480px) {
+    padding: 0 15px;
   }
 
 }
@@ -1100,10 +1238,10 @@ footer[role='contentinfo'] {
   display: inline-block;
   position: relative;
 
-
   label {
     display: inline-block;
     vertical-align: middle;
+    width: auto;
     margin: 15px 15px 15px 0;
   }
 
@@ -1958,7 +2096,6 @@ main .competitions {
 
   .your-rate {
     font-size: 17px;
-    margin: 0 0 20px 0;
     font-weight: 600;
 
     span {
@@ -1970,6 +2107,199 @@ main .competitions {
 }
 
 /***********************************************************************************************************************
-*********** competitions
+*********** deposit
 ***********************************************************************************************************************/
+
+.deposit {
+
+  .custom-table {
+    margin: 10px 0 30px;
+  }
+
+  .custom-table-cell {
+
+    &:nth-of-type(1) {
+      width: 10%;
+    }
+
+    &:nth-of-type(2) {
+      width: 20%;
+    }
+
+    &:nth-of-type(3) {
+      width: 30%;
+    }
+
+    &:nth-of-type(4) {
+      width: 40%;
+    }
+
+  }
+
+  .custom-table-caption {
+    color: #b36900;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  @media(max-width: 980px) {
+
+    .custom-table {
+      display: block;
+      width: 100%;
+      background: none;
+    }
+
+    .custom-table-row {
+      .clearfix();
+      display: block;
+      width: 100%;
+      border: 1px solid #e1e1e1;
+      margin: 10px 0;
+      padding: 0 0 0 100px;
+      position: relative;
+      min-height: 100px;
+
+      &:first-of-type {
+        display: none;
+      }
+
+    }
+
+    .custom-table-cell {
+      padding: 0;
+
+      &:after {
+        display: none;
+      }
+
+      &:nth-of-type(1) {
+        display: block;
+        width: 100px;
+        min-height: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        font-size: 72px;
+        line-height: 100px;
+        text-align: center;
+        padding: 0;
+        border: none;
+        border-right: 1px solid #e1e1e1;
+        float: left;
+      }
+
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        width: 50%;
+        min-height: 50px;
+        float: left;
+        border: none;
+        border-bottom: 1px solid #e1e1e1;
+        padding: 5px 10px;
+      }
+
+      &:nth-of-type(2) {
+        border-right: 1px solid #e1e1e1;
+        font-weight: 700;
+      }
+
+      &:nth-of-type(4) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        min-height: 50px;
+        float: left;
+        border: none;
+        font-style: italic;
+        padding: 5px 10px;
+        font-size: 24px;
+      }
+
+    }
+
+  }
+
+  @media(max-width: 480px) {
+
+    .custom-table-row {
+      padding: 0 0 0 50px;
+    }
+
+    .custom-table-cell {
+
+      &:nth-of-type(1) {
+        width: 50px;
+      }
+
+    }
+
+  }
+
+}
+
+.form-make-deposit {
+  margin: 20px 0 30px;
+
+  fieldset {
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 10px 0;
+
+    &:nth-of-type(2) {
+      margin: 10px 20px;
+    }
+
+  }
+
+  .custom-select-label {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+  }
+
+  .custom-select {
+    width: 312px;
+  }
+
+  label {
+    margin: 0 0 10px 0;
+  }
+
+  button[type='submit'] {
+    width: 178px;
+    margin: 10px 0;
+  }
+
+  @media(max-width: 768px) {
+
+    fieldset {
+      width: 100%;
+
+      &:nth-of-type(2) {
+        margin: 10px 0;
+      }
+
+    }
+
+    .custom-select,
+    button[type='submit'],
+    input[type='text'] {
+      width: 100%;
+      max-width: 312px;
+    }
+
+  }
+
+}
 
