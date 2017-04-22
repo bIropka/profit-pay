@@ -4447,7 +4447,12 @@ footer[role='contentinfo'] .we-accept span {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 35px 0;
+  padding: 0 0 35px;
+}
+.account-data h1 {
+  display: block;
+  width: 100%;
+  margin: 0 0 35px 0;
 }
 .account-image {
   margin: 0 60px 0 0;
@@ -4805,17 +4810,29 @@ main .competitions .your-rate span {
   margin: 20px 0;
 }
 .partners .banner {
+  display: block;
+  width: 100%;
   margin: 30px 0;
 }
-.partners .banner a {
+.partners .banner img {
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  margin: 0;
+  float: none;
+}
+.partners .banner .show-code {
   display: inline-block;
   vertical-align: middle;
   margin: 0 0 0 30px;
   color: #cc9850;
   font-weight: 600;
   position: relative;
+  cursor: pointer;
 }
-.partners .banner a:after {
+.partners .banner .show-code:after {
   content: '';
   display: block;
   width: 100%;
@@ -4826,80 +4843,13 @@ main .competitions .your-rate span {
   left: 0;
   bottom: 0;
 }
-.partners .banner a:hover:after {
+.partners .banner .show-code:hover:after {
   display: none;
 }
-@media (max-width: 980px) {
-  .partners .banner a {
+@media (max-width: 768px) {
+  .partners .banner .show-code {
     margin: 10px 0;
   }
-}
-.partners .banner-wide {
-  display: inline-block;
-  vertical-align: middle;
-  width: 100%;
-  max-width: 728px;
-  padding-top: 8.122743682310469%;
-  border: 1px solid #e1e1e1;
-  background-color: #fafafa;
-  position: relative;
-}
-@media (max-width: 980px) {
-  .partners .banner-wide {
-    display: block;
-    max-width: none;
-    padding-top: 0;
-    height: 60px;
-  }
-}
-.partners .banner-middle {
-  display: inline-block;
-  vertical-align: middle;
-  width: 100%;
-  max-width: 468px;
-  padding-top: 5.415162454873646%;
-  border: 1px solid #e1e1e1;
-  background-color: #fafafa;
-  position: relative;
-}
-@media (max-width: 980px) {
-  .partners .banner-middle {
-    display: block;
-    max-width: none;
-    padding-top: 0;
-    height: 60px;
-  }
-}
-.partners .banner-narrow {
-  display: inline-block;
-  vertical-align: middle;
-  width: 100%;
-  max-width: 240px;
-  padding-top: 36.10108303249097%;
-  border: 1px solid #e1e1e1;
-  background-color: #fafafa;
-  position: relative;
-}
-@media (max-width: 980px) {
-  .partners .banner-narrow {
-    display: block;
-    max-width: none;
-    padding-top: 0;
-    height: 60px;
-  }
-}
-.partners .size {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 26px;
 }
 .partners .custom-table-caption {
   font-size: 20px;
@@ -5384,41 +5334,6 @@ main .competitions .your-rate span {
   padding: 30px;
   text-align: center;
 }
-.window form .close-window {
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-  display: block;
-  width: 42px;
-  height: 42px;
-  border: 5px solid #ca882a;
-  background: #fbb70f;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  right: -52px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.window form .close-window .fa {
-  line-height: 30px;
-  font-size: 24px;
-}
-.window form .close-window:hover {
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-@media (max-width: 480px) {
-  .window form .close-window {
-    top: -52px;
-    right: 0;
-  }
-}
 .window form .title {
   font-size: 17px;
   font-weight: 700;
@@ -5483,6 +5398,85 @@ main .competitions .your-rate span {
 }
 @media (max-width: 480px) {
   .window form {
+    width: 300px;
+    top: 120px;
+    padding: 15px;
+  }
+}
+.window .close-window {
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  display: block;
+  width: 42px;
+  height: 42px;
+  border: 5px solid #ca882a;
+  background: #fbb70f;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: -52px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.window .close-window .fa {
+  line-height: 30px;
+  font-size: 24px;
+}
+.window .close-window:hover {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+@media (max-width: 480px) {
+  .window .close-window {
+    top: -52px;
+    right: 0;
+  }
+}
+.window .window-inner {
+  width: 370px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20%;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  text-align: center;
+}
+.window .window-inner code {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #333;
+  text-align: left;
+  margin: 0 0 20px 0;
+}
+.window .window-inner button {
+  width: 100%;
+  height: 42px;
+  color: #010000;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 42px;
+  text-transform: uppercase;
+  background: #fab617;
+  border: none;
+}
+.window .window-inner button:hover {
+  background: #010000;
+  color: #fab617;
+}
+.window .window-inner button:active {
+  line-height: 45px;
+}
+@media (max-width: 480px) {
+  .window .window-inner {
     width: 300px;
     top: 120px;
     padding: 15px;

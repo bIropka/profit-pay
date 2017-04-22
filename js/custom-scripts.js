@@ -95,12 +95,6 @@ $(window).ready(function() {
 
     });
 
-    $('.window').click(function (event) {
-        $target = $(event.target);
-        if (!$target.closest($('form')).length) $('.window').fadeOut();
-        if ($target.hasClass('close-window') || $target.hasClass('fa-close')) $('.window').fadeOut();
-    });
-
     $('.close-window .fa').click(function() {
         $('.window').fadeOut();
     });
@@ -118,5 +112,18 @@ $(window).ready(function() {
         $('.window-login').fadeIn();
     });
 
+    $('.show-code').click(function() {
+        $('.window-code').fadeIn();
+    });
+
+    $('.window').click(function (event) {
+        $target = $(event.target);
+        if (!$target.closest($('form')).length && !$target.closest($('.window-inner')).length) {
+            $('.window').fadeOut();
+        }
+        if ($target.hasClass('close-window') || $target.hasClass('fa-close')){
+            $('.window').fadeOut();
+        }
+    });
 
 });
